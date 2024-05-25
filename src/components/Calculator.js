@@ -21,16 +21,15 @@ const Calculator = () => {
     if (label === '=') {
       try {
         let expression = input;
-        // Replace function names with their respective JavaScript function calls
         expression = expression.replace(/sin/g, 'Math.sin');
         expression = expression.replace(/cos/g, 'Math.cos');
         expression = expression.replace(/tan/g, 'Math.tan');
         expression = expression.replace(/log/g, 'Math.log');
         expression = expression.replace(/sqrt/g, 'Math.sqrt');
         expression = expression.replace(/exp/g, 'Math.exp');
-        expression = expression.replace(/pi/g, 'Math.PI');
+        expression = expression.replace(/π/g, 'Math.PI'); 
         expression = expression.replace(/\^/g, '**');
-
+        
         const evaluated = eval(expression);
         setResult(evaluated.toString());
         setInput(evaluated.toString());
@@ -40,7 +39,7 @@ const Calculator = () => {
       return;
     }
 
-    if (['sin', 'cos', 'tan', 'log', 'sqrt', 'exp', 'pi'].includes(label)) {
+    if (['sin', 'cos', 'tan', 'log', 'sqrt', 'exp'].includes(label)) {
       setInput(input + label + '(');
       return;
     }
@@ -54,8 +53,8 @@ const Calculator = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-blue-400 to-blue-500">
-      <div className="bg-white rounded-lg shadow-xl p-8">
+    <div className="flex">
+      <div className="ml-64 mt-10 flex flex-col items-center w-full p-4 bg-[#ADBBDA] min-h-screen">
         <Display value={input || result || '0'} />
         <ButtonPanel handleClick={handleClick} />
       </div>
