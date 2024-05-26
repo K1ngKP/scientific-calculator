@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Display from './CalculatorAssets/Display';
 import ButtonPanel from './CalculatorAssets/ButtonPanel';
-import { Rnd } from 'react-rnd';
 
 const Calculator = () => {
   const [input, setInput] = useState('');
@@ -22,7 +21,6 @@ const Calculator = () => {
     if (label === '=') {
       try {
         let expression = input;
-        // Replace function names with their respective JavaScript function calls
         expression = expression.replace(/sin/g, 'Math.sin');
         expression = expression.replace(/cos/g, 'Math.cos');
         expression = expression.replace(/tan/g, 'Math.tan');
@@ -55,8 +53,9 @@ const Calculator = () => {
   };
 
   return (
-    <div className="flex">
-      <div className="fixed left-4 top-16 p-4 bg-[#ADBBDA] w-[50vw] h-[75vh] rounded-lg shadow-lg overflow-hidden">
+    <div className="flex bg-gradient-to-r from-indigo-300 to-blue-300 min-h-screen items-start pt-20">
+      <div className="fixed left-4 top-16 p-4 bg-indigo-300 w-[50vw] h-[75vh] rounded-lg shadow-lg overflow-hidden">
+        <h2 className="text-2xl font-bold text-center mb-4 text-indigo-700">Scientific Calculator</h2>
         <Display value={input || result || '0'} />
         <ButtonPanel handleClick={handleClick} />
       </div>
