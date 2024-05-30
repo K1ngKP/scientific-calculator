@@ -1,3 +1,6 @@
+Mathemagics - 
+This website is a scientific calculator built using React.js and styled with Tailwind CSS. It features a responsive layout with a display area for input and results, and a button panel for digits, operators, and scientific functions like sin, cos, tan, log, sqrt, exp, and pi. The calculator manages state using React's `useState` hook and handles various user interactions to perform calculations. Tailwind CSS ensures a modern and clean design, providing a user-friendly experience. This site is ideal for performing both basic arithmetic and advanced scientific calculations directly in the browser.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
