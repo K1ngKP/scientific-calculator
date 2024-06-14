@@ -9,38 +9,43 @@ const CubicSolver = () => {
 
   const solveCubicEquation = () => {
 
-    const aNum = parseFloat(a);
-    const bNum = parseFloat(b);
-    const cNum = parseFloat(c);
-    const dNum = parseFloat(d);
+    var aNum = parseFloat(a);
+    var bNum = parseFloat(b);
+    var cNum = parseFloat(c);
+    var dNum = parseFloat(d);
 
 
     const discriminant = (18 * aNum * bNum * cNum * dNum) - (4 * Math.pow(bNum, 3) * dNum) + (Math.pow(bNum, 2) * Math.pow(cNum, 2)) - (4 * aNum * Math.pow(cNum, 3)) - (27 * Math.pow(aNum, 2) * Math.pow(dNum, 2));
     
     let rootsArr = [];
     rootsArr.push(discriminant);
+
+
+
+  
     if (discriminant > 0) {
       const delta0 = Math.pow(bNum, 2) - 3 * aNum * cNum;
       const delta1 = 2 * Math.pow(bNum, 3) - 9 * aNum * bNum * cNum + 27 * Math.pow(aNum, 2) * dNum;
       const C = Math.cbrt((delta1 + Math.sqrt(delta1 * delta1 - 4 * delta0 * delta0 * delta0)) / 2);
-      rootsArr.push((-bNum - C + delta0 / C) / (3 * aNum));
-      rootsArr.push((-bNum + delta0 / C - C) / (3 * aNum));
-      rootsArr.push((-bNum + delta0 / C + C) / (3 * aNum));
+      rootsArr.push(parseFloat(-bNum - C + delta0 / C) / (3 * aNum));
+      rootsArr.push(parseFloat(-bNum + delta0 / C - C) / (3 * aNum));
+      rootsArr.push(parseFloat(-bNum + delta0 / C + C) / (3 * aNum));
     } else if (discriminant === 0) {
-      rootsArr.push((-bNum - Math.pow(2 * aNum, 1 / 3)) / (3 * aNum));
-      rootsArr.push((-bNum + Math.pow(2 * aNum, 1 / 3)) / (3 * aNum));
-      rootsArr.push((4 * bNum - Math.pow(2 * aNum, 1 / 3)) / (6 * aNum));
+      rootsArr.push(parseFloat(-bNum - Math.pow(2 * aNum, 1 / 3)) / (3 * aNum));
+      rootsArr.push(parseFloat(-bNum + Math.pow(2 * aNum, 1 / 3)) / (3 * aNum));
+      rootsArr.push(parseFloat(4 * bNum - Math.pow(2 * aNum, 1 / 3)) / (6 * aNum));
     } else {
       const A = Math.pow(((-27 * Math.pow(dNum, 2) + 18 * aNum * bNum * cNum * dNum - 4 * Math.pow(bNum, 3) * dNum - 4 * aNum * Math.pow(cNum, 3) + Math.pow(bNum, 2) * Math.pow(cNum, 2)) / (2 * Math.pow(discriminant, 3 / 2))), 1 / 3);
       const delta = 0.5 * (Math.sqrt(-3 * Math.pow(bNum, 2) + 4 * aNum * cNum) / Math.pow(discriminant, 1 / 2));
       const i = Math.sqrt(-1);
-      const y1 = (-(bNum / (4 * aNum))) + i * ((Math.sqrt(3) / 2) * delta + A / (2 * (Math.sqrt(3) / 2)));
-      const y2 = (-(bNum / (4 * aNum))) + i * ((-(Math.sqrt(3) / 2)) * delta + A / (2 * (Math.sqrt(3) / 2)));
-      const y3 = (-(bNum / (4 * aNum))) + i * (-A / (2 * (Math.sqrt(3) / 2)));
-      rootsArr.push(y1, y2, y3);
+      var y1 = (-(bNum / (4 * aNum))) + i * ((Math.sqrt(3) / 2) * delta + A / (2 * (Math.sqrt(3) / 2)));
+      var y2 = (-(bNum / (4 * aNum))) + i * ((-(Math.sqrt(3) / 2)) * delta + A / (2 * (Math.sqrt(3) / 2)));
+      var y3 = (-(bNum / (4 * aNum))) + i * (-A / (2 * (Math.sqrt(3) / 2)));
+      rootsArr.push(parseFloat(y1), parseFloat(y2),parseFloat(y3));
     }
     setRoots(rootsArr);
-  };
+    console.log(rootsArr)
+   };
 
   return (
     <div>
@@ -79,5 +84,13 @@ const CubicSolver = () => {
     </div>
   );
 };
+function cuberoot(x) {
+  var y = Math.pow(Math.abs(x), 1/3);
+  return x < 0 ? -y : y;
+}
 
 export default CubicSolver;
+
+
+
+

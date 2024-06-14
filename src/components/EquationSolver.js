@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import QuadraticSolver from './EquationComp/QuadraticSolver';
