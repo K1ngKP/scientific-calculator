@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -10,24 +10,25 @@ const Navbar = () => {
         </div>
         <ul className="flex space-x-6">
           <li>
-            <Link to="/" className="text-white hover:text-gray-200 transition-colors duration-300">
+            <NavLink to="/" className={({ isActive }) => (isActive ? "font-semibold font-family:Cambria text-fuchsia-900 text-2xl hover:text-fuchsia-600 transition-colors duration-300" : "font-family:Cambria text-white text-2xl hover:text-fuchsia-600 transition-colors duration-300")} >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/calculator" className="text-white hover:text-gray-200 transition-colors duration-300">
+            <NavLink to="/calculator" className={({ isActive }) => (isActive ? "font-semibold font-family:Cambria text-fuchsia-900 text-2xl hover:text-fuchsia-600 transition-colors duration-300" : "font-family:Cambria text-white text-2xl hover:text-fuchsia-600 transition-colors duration-300")} >
               Calculator
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/equation-solver" className="text-white hover:text-gray-200 transition-colors duration-300">
-              Equation Solver
-            </Link>
+            <NavLink to="/equation-solver" className={({ isActive }) => (isActive ? "font-semibold font-family:Cambria text-fuchsia-900 text-2xl hover:text-fuchsia-600 transition-colors duration-300" : "font-family:Cambria text-white text-2xl hover:text-fuchsia-600 transition-colors duration-300")} >
+              Equations
+            </NavLink>
           </li>
           <li>
-            <Link to="/sudoku-solver" className="text-white hover:text-gray-200 transition-colors duration-300">
+            
+            <NavLink to="/sudoku-solver" className={({ isActive }) => (isActive ? "font-semibold font-family:Cambria text-fuchsia-900 text-2xl hover:text-fuchsia-600 transition-colors duration-300" : "font-family:Cambria text-white text-2xl hover:text-fuchsia-600 transition-colors duration-300")} >
               Sudoku Solver
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
