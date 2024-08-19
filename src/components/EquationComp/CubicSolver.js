@@ -9,17 +9,20 @@ const CubicSolver = () => {
 
   const solveCubicEquation = () => {
 
-    var aNum = parseFloat(a);
-    var bNum = parseFloat(b);
-    var cNum = parseFloat(c);
-    var dNum = parseFloat(d);
+    let aNum = parseFloat(a);
+    let bNum = parseFloat(b);
+    let cNum = parseFloat(c);
+    let dNum = parseFloat(d);
 
 
     const discriminant = (18 * aNum * bNum * cNum * dNum) - (4 * Math.pow(bNum, 3) * dNum) + (Math.pow(bNum, 2) * Math.pow(cNum, 2)) - (4 * aNum * Math.pow(cNum, 3)) - (27 * Math.pow(aNum, 2) * Math.pow(dNum, 2));
     
     let rootsArr = [];
-    rootsArr.push(discriminant);
-
+    
+    if(aNum!=0 && bNum==0 && cNum==0)
+    {
+      
+    }
 
 
   

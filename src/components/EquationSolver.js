@@ -6,7 +6,7 @@ import CubicSolver from './EquationComp/CubicSolver';
 
 const EquationSolver = () => {
   return (
-    <div className="relative w-full h-full bg-gradient-to-r from-purple-500 to-blue-500 text-white flex flex-col justify-center items-center p-10 overflow-">
+    <div className="absolute w-full h-full bg-gradient-to-r from-purple-500 to-blue-500 text-white flex flex-col justify-center items-center p-10 overflow-">
       <div className="animate-fade-in text-center">
         <h1 className="text-4xl font-bold mb-6">Equation Solver</h1>
         <p className="text-lg mb-8">
